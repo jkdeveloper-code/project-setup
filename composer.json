@@ -1,0 +1,7 @@
+{
+    "name": "jkdev/project-setup",
+    "description": "A simple setup demonstrating my workflow for new projects.",
+    "require": {
+        "vlucas/phpdotenv": "^5.1"
+    }
+}
