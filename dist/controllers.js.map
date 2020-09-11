@@ -1,0 +1,1 @@
+{"version":3,"sources":["test.js"],"names":["test","Test"],"mappings":"AAAA,MAAAA,KAAA,IAAAC","file":"controllers.js","sourcesContent":["const test = new Test;"]}

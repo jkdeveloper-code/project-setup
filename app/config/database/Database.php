@@ -2,15 +2,13 @@
 
 namespace App\Config\Database;
 
-$dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
 class Database {
     private $host = 'localhost';
-    private $database = 'database';
+    private $database = 'test';
     private $username;
     private $password;
     private $dsn;
+    private $production;
     public $results = array();
 
     function __construct() {

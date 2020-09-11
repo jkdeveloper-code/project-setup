@@ -1,0 +1,12 @@
+// Media Query Mixins
+@mixin mQMin($args) {
+    @media screen and (min-width: $args) {
+        @content;
+    }
+}
+
+@mixin mQMax($args) {
+    @media screen and (max-width: $args) {
+        @content;
+    }
+}
