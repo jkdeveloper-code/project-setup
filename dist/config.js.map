@@ -1,1 +1,0 @@
-{"version":3,"sources":["Test.js"],"names":["Test","[object Object]","alert"],"mappings":"AAAA,MAAAA,KACAC,cACAC,MAAA","file":"config.js","sourcesContent":["class Test {\r\n    constructor() {\r\n        alert('This is a test.');\r\n    }\r\n}"]}

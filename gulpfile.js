@@ -25,20 +25,11 @@ const scss = () => {
         .pipe(browsersync.stream());
 }
 
-const jsConfig = () => {
-    return src(files.jsConfig)
+const js = () => {
+    return src([files.jsConfig, files.jsControllers])
         .pipe(sourcemaps.init())
-        .pipe(concat('config.js')) 
+        .pipe(concat('bundled.min.js')) 
         .pipe(terser()) 
-        .pipe(sourcemaps.write('.'))
-        .pipe(dest('dist'));
-}
-
-const jsControllers = () => {
-    return src(files.jsControllers)
-        .pipe(sourcemaps.init())
-        .pipe(concat('controllers.js')) 
-        .pipe(terser())
         .pipe(sourcemaps.write('.'))
         .pipe(dest('dist'));
 }
@@ -54,12 +45,12 @@ const init = () => {
 const watchFiles = () => {
     init();
     watch(['*php', 'app/config/**/**/*php', 'app/controllers/**/**/*php']).on('change', browsersync.reload);
-    watch(files.jsConfig, jsConfig).on('change', browsersync.reload);
-    watch(files.jsControllers, jsControllers).on('change', browsersync.reload);
+    watch(files.jsConfig, js).on('change', browsersync.reload);
+    watch(files.jsControllers, js).on('change', browsersync.reload);
     watch(files.scssAll, scss);
 }
 
 exports.default = series(
-    parallel(jsConfig, jsControllers, scss),
+    parallel(js, scss),
     watchFiles
 );

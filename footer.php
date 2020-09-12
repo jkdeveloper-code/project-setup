@@ -2,7 +2,6 @@
 <footer>
 
 </footer>
-<script src="dist/config.js"></script>
-<script src="dist/controllers.js"></script>
+<script src="dist/bundled.min.js"></script>
 </body>
 </html>
